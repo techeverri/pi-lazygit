@@ -1,0 +1,51 @@
+{
+  "name": "pi-lazygit",
+  "version": "0.0.0-semantic-release",
+  "description": "Open lazygit without leaving your current Pi session.",
+  "keywords": [
+    "lazygit",
+    "pi",
+    "pi-package"
+  ],
+  "homepage": "https://github.com/techeverri/pi-lazygit#readme",
+  "bugs": "https://github.com/techeverri/pi-lazygit/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techeverri/pi-lazygit.git"
+  },
+  "files": [
+    "lazygit.ts"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "provenance": true
+  },
+  "scripts": {
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint --deny-warnings .",
+    "release": "semantic-release",
+    "test": "node --test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "oxfmt": "0.67.0",
+    "oxlint": "1.82.0",
+    "semantic-release": "25.0.9",
+    "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./lazygit.ts"
+    ]
+  }
+}
